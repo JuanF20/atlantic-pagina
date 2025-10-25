@@ -10,19 +10,73 @@
 </head>
 <body>
 
-  <h1>Bienvenido a la página 2</h1>
+   <!-- Primera franja gris -->
+  <div class="top-line"></div>
 
-  <!-- Imágenes -->
-  <div class="galeria">
-    <img src="images/logo.jpg" alt="Logo">
-    <img src="images/1.jpeg" alt="Imagen 1">
-    <img src="images/2.jpeg" alt="Imagen 2">
-    <img src="images/3.jpeg" alt="Imagen 3">
+  <!-- Segunda franja gris con logo, botones y burbujas -->
+  <div class="top-line2">
+    <img src="../logo/images/logo.jpg" alt="Logo" class="logo-img">
+
+    <div class="button-group">
+      <button class="btn-productos">Nuestros Productos</button>
+      <button class="btn-productos2">Nuestros Productos 2</button>
+      <button class="btn-productos3">Nuestros Productos 3</button>
+    </div>
+
+    <!-- Burbujas -->
+    <div class="bubbles-container">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
   </div>
 
-  <!-- Botón para volver -->
-  <button onclick="window.location.href='../index.html'">Volver</button>
+  <!-- Contenido principal -->
+  <div class="content">
+    <!-- Carrusel -->
+    <div class="carousel">
+      <img src="../logo/images/1.jpeg" alt="Imagen 1">
+      <img src="../logo/images/2.jpeg" alt="Imagen 2">
+      <img src="../logo/images/3.jpeg" alt="Imagen 3">
+    </div>
 
+    <!-- Recuadro derecho grande -->
+    <div class="gray-box large">
+      <h2>Información Principal</h2>
+      <p>
+        Aquí puedes escribir información importante sobre tus productos,
+        promociones o servicios destacados.
+      </p>
+    </div>
+  </div>
+
+  <!-- Segundo recuadro debajo -->
+  <div class="bottom-content">
+    <div class="gray-box small">
+      <h3>Noticias o Actualizaciones</h3>
+      <p>
+        En este recuadro puedes colocar mensajes recientes, anuncios
+        o cualquier información complementaria.
+      </p>
+    </div>
+  </div>
+
+  <!-- Script del carrusel -->
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+    setInterval(() => {
+      images.forEach(img => img.style.display = 'none');
+      images[index].style.display = 'block';
+      index = (index + 1) % images.length;
+    }, 3000);
+  </script>
 </body>
 </html>
-
